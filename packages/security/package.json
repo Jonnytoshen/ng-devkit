@@ -1,0 +1,31 @@
+{
+  "name": "@ng-devkit/security",
+  "version": "1.0.0",
+  "description": "@ng-devkit/security",
+  "author": "Jonny",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonnytoshen/ng-devkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jonnytoshen/ng-devkit/issues"
+  },
+  "homepage": "https://github.com/Jonnytoshen/ng-devkit#readme",
+  "keywords": [
+    "angular",
+    "ng-devkit",
+    "typescript",
+    "security",
+    "acl",
+    "permission"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^11.2.13",
+    "@angular/core": "^11.2.13",
+    "rxjs": "~6.6.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

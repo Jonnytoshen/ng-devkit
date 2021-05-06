@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "0a16e14d-91e3-45ce-bd0e-44f05d669032"
+  },
   "version": 1,
   "newProjectRoot": "packages",
   "projects": {
@@ -122,6 +125,46 @@
             "production": {
               "devServerTarget": "ng-devkit:serve:production"
             }
+          }
+        }
+      }
+    },
+    "security": {
+      "projectType": "library",
+      "root": "packages/security",
+      "sourceRoot": "packages/security/src",
+      "prefix": "ndk",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "packages/security/tsconfig.lib.json",
+            "project": "packages/security/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/security/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/security/src/test.ts",
+            "tsConfig": "packages/security/tsconfig.spec.json",
+            "karmaConfig": "packages/security/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/security/tsconfig.lib.json",
+              "packages/security/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
